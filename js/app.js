@@ -2,6 +2,8 @@ const fragment = document.createDocumentFragment();
 const sections = document.querySelectorAll('section[data-nav]');
 const navbarList = document.getElementById('navbar__list');
 
+// helper functions
+
 function createNewListElement(el) {
   const listitem = document.createElement('li');
   const link = document.createElement('a');
