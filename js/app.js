@@ -9,6 +9,7 @@ function createNewListElement(el) {
   const link = document.createElement('a');
 
   link.setAttribute('href', `#${el.getAttribute('id')}`);
+  link.setAttribute('id', `${el.getAttribute('id')}-nav`);
   link.setAttribute('class', 'menu__link');
 
   link.textContent = el.getAttribute('data-nav');
@@ -36,8 +37,10 @@ function toggleActiveClass() {
   sections.forEach((el) => {
     if (isInViewport(el)) {
       el.classList.add('your-active-class');
+      document.getElementById(`${el.getAttribute('id')}-nav`).classList.add('active-nav-section');
     } else {
       el.classList.remove('your-active-class');
+      document.getElementById(`${el.getAttribute('id')}-nav`).classList.remove('active-nav-section');
     }
   });
 }
